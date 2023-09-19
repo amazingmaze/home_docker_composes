@@ -1,9 +1,15 @@
-homeassistant:
+version: "2.1"
+services:
+  homeassistant:
+    image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
-    volumes:
-      - /opt/homeassistant/config:/config
-      - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
-    privileged: true
     network_mode: host
+    environment:
+      - TZ=Etc/GMT+2
+    volumes:
+      - /opt/docker/ha:/config
+    ports:
+      - 8123:8123
+    devices:
+      - /dev/bus/usb/002/002:/dev/bus/usb/002/002
+    restart: unless-stopped
