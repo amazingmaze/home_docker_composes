@@ -7,9 +7,12 @@ services:
     environment:
       - TZ=Etc/GMT+2
     volumes:
-      - /opt/docker/ha:/config
+      - config:/config
     ports:
       - 8123:8123
     devices:
       - /dev/bus/usb/002/002:/dev/bus/usb/002/002
     restart: unless-stopped
+
+volumes:
+  config:
