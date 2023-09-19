@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   homeassistant:
-    image: lscr.io/linuxserver/homeassistant:latest
+    image: ghcr.io/home-assistant/home-assistant:stable
     container_name: homeassistant
     network_mode: host
     environment:
