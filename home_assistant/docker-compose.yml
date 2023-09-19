@@ -11,7 +11,7 @@ services:
     ports:
       - 8123:8123
     devices:
-      - /dev/bus/usb/002/002:/dev/bus/usb/002/002
+      - /dev/ttyACM0
     restart: unless-stopped
 
 volumes:
